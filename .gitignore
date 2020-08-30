@@ -1,0 +1,6 @@
+*.o
+venv/
+.vscode/
+Code/benchmark/benchmark
+Code/benchmark/benchmark_*/
+Code/server/server
