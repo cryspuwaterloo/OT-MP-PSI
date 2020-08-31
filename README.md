@@ -133,8 +133,8 @@ See https://docs.docker.com/engine/reference/commandline/run/ for additional inf
 	-c	Constant for number of bins (comm. vs. comp. tradeoff) (default=1)
 	-f	Regenerate elements for benchmarking instance (default=false)
 	-k	IP Address of keyholder server (default 127.0.0.1)
-	-r	Number of times to repeat experiment (has defaults)
-	-s	Choice of Scheme 0=both,1,2 (default 0) 
+	-r	Number of times to repeat experiment (default all:1 sharegen:10)
+	-s	Choice of Scheme 0(=t-PSI_0),1(=t-PSI),2(=both) (default 0)
 	-l	Log results in file (default false) 
 	-x	Don't run the reconstruction in the "all" command 
 	-y	Fast Share Generation in the "all" command, for generating shares fast, without the actual protocol
