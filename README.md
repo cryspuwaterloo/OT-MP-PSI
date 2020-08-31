@@ -1,7 +1,7 @@
 # Over-Threshold Multi-Party Private Set Intersection
 
-This is exprimental code for the paper "Practical Over-Threshold Multi-Party Private Set Intersection". 
-It includes a C++ implementation of both of our Over-Threshold Multi-Party Private Set Intersection (OT-MP-PSI) protocols, $t-PSI_0$ (described in Section 3.3 of the paper) and $t-PSI$ (Section 3.4). The implementation provides separate benchmarks for the share generation and reconstruction phases. In the share generation phase, we consider a single remote key-holder and simultaneously compute the shares for all parties. The reconstruction is carried out locally and is parallelized using OpenMP. After setting all parameters described below, random datasets for the participants are generated and the intersection is computed. The code outputs verbose logs about the time taken for each operation. 
+This is experimental code for the paper "Practical Over-Threshold Multi-Party Private Set Intersection". 
+It includes a C++ implementation of both of our Over-Threshold Multi-Party Private Set Intersection (OT-MP-PSI) protocols, t-PSI_0 (described in Section 3.3 of the paper) and t-PSI (Section 3.4). The implementation provides separate benchmarks for the share generation and reconstruction phases. In the share generation phase, we consider a single remote key-holder and simultaneously compute the shares for all parties. The reconstruction is carried out locally and is parallelized using OpenMP. After setting all parameters as described below, random datasets for the participants are generated and the intersection is computed. The code outputs verbose logs about the time taken for each operation. 
 
 ## Contents
 
@@ -153,10 +153,10 @@ For the benchmarking the share generation (using the scheme specified by the -s 
 * Threshold for the set intersection (t)
 * Prime bit length (which specifies the bit security)
 
-With these parameters, the share generation is executed for random elements (for as many times as specified by the -r option in the command) in comminication with a keyholder server (at an address specicified with the -k option). 
-Mind that the number of elements (n) and the number of parties (m) are irrelvant in the time complexity of a single share generation.
+With these parameters, the share generation is executed for random elements (for as many times as specified by the -r option in the command) in communication with a keyholder server (at an address specified with the -k option). 
+Mind that the number of elements (n) and the number of parties (m) are irrelevant in the time complexity of a single share generation.
 
-**Output:** The average time for share generation is reported in the output. A more detailed report including average, min, max and standard deviation of runtime and communication during different rounds of the protocol can be written to file in json format (if specified by the -l option)
+**Output:** The average time for share generation is reported in the output. A more detailed report including average, min, max, and standard deviation of runtime and communication during different rounds of the protocol can be written to file in json format (if specified by the -l option)
 
 Logs are all put in a directory with the following format based on the parameters:
 
@@ -170,17 +170,17 @@ Similarly, the input parameters of the reconstruction phase of the benchmark (us
 * Prime bit length (which specifies the bit security)
 * Constant for Communication/Computation tradeoff (c)
 
-For this benckmark, to measure the runtime, random numbers are generated as shares in a single bin (analagous to shares that are provided by the parties in a real scenario) and reconstruction is done with these shares. Reconstruction is done locally (for as many times as specified by the -r option).
+For this benckmark, to measure the runtime, random numbers are generated as shares in a single bin (analogous to shares that are provided by the parties in a real scenario) and reconstruction is done with these shares. Reconstruction is done locally (for as many times as specified by the -r option).
 
-**Output:** The average time for reconstruction in a single bin is reported in the output. A more detailed report including average, min, max and standard deviation of runtime can be written to file in json format (if specified by the -l option)
+**Output:** The average time for reconstruction in a single bin is reported in the output. A more detailed report including average, min, max, and standard deviation of runtime can be written to file in json format (if specified by the -l option)
 
 Logs are all put in a directory with the following format based on the parameters:
 
 ```benchmark_recon_[m][n][t][prime bitsize]_[c]```
 
 #### End to End Protocol
-An end-to-end execution of the protocol is also available, by specifying all the parameters mentioned in the preivous two protocols.
-With the specified parameters, elements are generated for the parties and written to file, share generation is performed for the all the parties in communication with the keyholder server and the shares are written to file, and finally the reconstruction is performed locally in all the bins.
+An end-to-end execution of the protocol is also available, by specifying all the parameters mentioned in the previous two protocols.
+With the specified parameters, elements are generated for the parties and written to file, share generation is performed for all the parties in communication with the keyholder server and the shares are written to file, and finally the reconstruction is performed locally in all the bins.
 
 **Output:** The average time for share generation and reconstruction is reported in the output.
 
