@@ -441,9 +441,13 @@ void benchmark_generate_share(int t, int bitsize, int scheme, string server_ip="
     Keyholder keyholder(context);
     Elementholder elementholder(rand()%1000 + 1, bitsize);
     client elem_holder(server_ip,log);
-    elem_holder.send_to_server("INIT", keyholder.toString());
 
-    cout << "Connected to server" << endl;
+    string return_string = elem_holder.send_to_server("INIT", keyholder.toString());
+    if (return_string=="ERR"){
+            cout << "Server not running. Have you ran the server?" << endl;
+            return;
+        } else
+            cout << "Connected to server" << endl;
 
     Share share_x;
     int num_bins=10;
