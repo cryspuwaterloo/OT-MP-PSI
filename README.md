@@ -115,7 +115,7 @@ Finally, run the ```make``` command in both the ```server``` and ```benchmark```
 Note that both the script and the makefiles rely on global installation of the dependencies which might override existing libraries so  use this option with caution.
 
 ## Benchmarking
-To run the benchmarks, one or two shells (depending on the task that is being benchmarked) need to be running. The shells need to run the following executables:
+To run the benchmarks, one or two shells (depending on the task that is being benchmarked) need to be running. We however recommend that you run both shells for all experiments. The shells need to run the following executables respectively:
 
 **Keyholder Server:** As will be specified below, a keyholder server needs to be running for some of the benchmarks. This can be done by executing ```./server``` in the ```server``` directory. Leave the server running while running the benchmarks.
 
