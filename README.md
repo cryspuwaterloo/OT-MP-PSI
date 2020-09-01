@@ -103,6 +103,10 @@ Open another terminal and use ```docker exec -it <container_id> bash``` again to
 
 See https://docs.docker.com/engine/reference/commandline/run/ for additional info
 
+**NOTE:** Since the IP of the docker will be needed to run some of the benchmarks, you can obtain the IP of a docker container with the following command:
+
+```bash docker inspect <container_id>```
+
 ### Build locally
 
 The dependencies can be installed individually from the links provided above. The ```install.sh``` script can be used to automate the installation of the dependencies.
