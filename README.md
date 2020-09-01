@@ -30,15 +30,6 @@ Experiments are to be run on a Unix machine. Also, the following dependencies ar
 
 ## Building the project
 
-### Build locally
-
-The dependencies can be installed individually from the links provided above. The ```install.sh``` script can be used to automate the installation of the dependencies.
-Then run the following command to set the environment variables:
-```export LD_LIBRARY_PATH="/usr/local/lib"```
-Finally, run the ```make``` command in both the ```server``` and ```benchmark``` directories.
-
-Note that both the script and the makefiles rely on global installation of the dependencies which might override existing libraries so  use this option with caution. We present alternative options below. 
-
 ### Build from docker
 As a preliminary step, install docker from https://docs.docker.com/get-docker/ based on the OS you are running.
 Two options are available for running the code using docker, pulling the pre-built image from dockerhub, or building the image from scratch.
@@ -112,10 +103,20 @@ Open another terminal and use ```docker exec -it <container_id> bash``` again to
 
 See https://docs.docker.com/engine/reference/commandline/run/ for additional info
 
+### Build locally
+
+The dependencies can be installed individually from the links provided above. The ```install.sh``` script can be used to automate the installation of the dependencies.
+Then run the following command to set the environment variables:
+```export LD_LIBRARY_PATH="/usr/local/lib"```
+Finally, run the ```make``` command in both the ```server``` and ```benchmark``` directories.
+
+Note that both the script and the makefiles rely on global installation of the dependencies which might override existing libraries so  use this option with caution. We present alternative options below. 
+
 
 ## Benchmarking
+To run the benchmarks, one or two shells (depending on the task that is being benchmarked) need to be running. The shells need to run the following executables:
 
-**Keyholder Server:** As will be specified below, a keyholder server needs to be running for some of the benchmarks. This can be done by executing ```./server``` in the ```server``` directory.
+**Keyholder Server:** As will be specified below, a keyholder server needs to be running for some of the benchmarks. This can be done by executing ```./server``` in the ```server``` directory. Leave the server running while running the benchmarks.
 
 **Benchmark Executable:** A command line interface has been provided to run the protocol with arbitrary parameters. To access this CLI execute ```./benchmark``` in the ```benchmark``` directory. 
 
