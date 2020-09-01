@@ -110,8 +110,7 @@ Then run the following command to set the environment variables:
 ```export LD_LIBRARY_PATH="/usr/local/lib"```
 Finally, run the ```make``` command in both the ```server``` and ```benchmark``` directories.
 
-Note that both the script and the makefiles rely on global installation of the dependencies which might override existing libraries so  use this option with caution. We present alternative options below. 
-
+Note that both the script and the makefiles rely on global installation of the dependencies which might override existing libraries so  use this option with caution.
 
 ## Benchmarking
 To run the benchmarks, one or two shells (depending on the task that is being benchmarked) need to be running. The shells need to run the following executables:
