@@ -9,10 +9,10 @@ It includes a C++ implementation of both of our Over-Threshold Multi-Party Priva
   - Contents
   - Dependencies
   - Building the project
-    - Build Locally
     - Build from Docker
       * Run an image from Dockerhub
       * Build and run image from github using docker
+    - Build Locally
   - Benchmarking
     - Examples
     - Protocols
@@ -45,8 +45,6 @@ Pull the image from the repo
 Then execute the appropriate commands below based on your OS to run the containers:
 
 ##### Windows/Mac
-To get the image running as a container in the background:
-
 ```docker run --name <container_name> -it johnbon7/ot-mpsi:1.0 ```
 
 Where <container_name> is the name of the container that you have chosen, for example "mycontainer1". 
